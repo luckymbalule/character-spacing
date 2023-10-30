@@ -1,4 +1,4 @@
-export default function leftSpace(element: any, char: Array<string> | string): string {
+export function leftSpace(element: string | undefined | null, char: Array<string> | string): string {
    let str: string = "";
    if (element !== (null || undefined)) {
      str = rightSpace(removeLastSpace(element));
@@ -22,8 +22,8 @@ export default function leftSpace(element: any, char: Array<string> | string): s
    }
 }
 
-export function removeLastSpace (str: any): string {
-   let trimStr: any = `${str}`;
+export function removeLastSpace (str: string | undefined | null): string {
+   let trimStr: string = `${str}`;
    const regex = new RegExp("\\s", "g");
 
    while (regex.test(trimStr.slice(-1, undefined))) {
@@ -32,8 +32,8 @@ export function removeLastSpace (str: any): string {
    return trimStr;
 }
 
-export function removeFirstSpace (str: any): string {
-   let trimStr: any = `${str}`;
+export function removeFirstSpace (str: string | undefined | null): string {
+   let trimStr: string = `${str}`;
    const regex = new RegExp("\\s", "g");
 
    while (regex.test(trimStr.slice(0, 1))) {
@@ -42,8 +42,8 @@ export function removeFirstSpace (str: any): string {
    return trimStr;
 }
 
-export function rightSpace (str: any): string {
-   let addStr: any = `${str}`;
+export function rightSpace (str: string): string {
+   let addStr: string = `${str}`;
    const regex = new RegExp("\\s", "g");
 
    if (!regex.test(addStr.slice(-1, undefined))) {
